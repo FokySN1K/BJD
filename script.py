@@ -5,6 +5,8 @@ from pathlib import Path
 
 import easyocr
 import os
+import webbrowser
+
 
 
 def getPathFilesFromDirectory(directory: str) -> list:
@@ -13,12 +15,15 @@ def getPathFilesFromDirectory(directory: str) -> list:
             if os.path.isfile(os.path.join(directory, f))]
 
 def getTextFromFile(filePath: str) -> str:
-    reader = easyocr.Reader(['ru', 'en'], gpu=True)
-    results = reader.readtext(filePath, detail=1, paragraph=True)
+    try:
+        reader = easyocr.Reader(['ru', 'en'], gpu=True)
+        results = reader.readtext(filePath, detail=1, paragraph=True)
 
-    texts = [result[1] for result in results]
+        texts = [result[1] for result in results]
 
-    return str.lower(' '.join(texts))
+        return str.lower(' '.join(texts))
+    except:
+        print("Название файлов должно содержать только латинские буквы или цифры")
 
 def createTextFromFiles(directoryPath: str) -> list:
 
@@ -79,6 +84,7 @@ def start():
         for res in data:
             if find in res["text"]:
                 print(f"Ссылка: {getFileUrl(res['filepath'])}")
+                #webbrowser.open(res['filepath'])
 
 def rename():
     directory = "./21"
@@ -93,6 +99,8 @@ def rename():
                 os.path.join(directory, new_filename)
             )
             print(f'Переименован: {filename} -> {new_filename}')
+
+
 if __name__ == '__main__':
 
     start()
