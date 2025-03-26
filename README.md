@@ -23,7 +23,7 @@
 
 ```bash
 pip install easyocr
-
-3.
+```
+3. Расспакуйте архив BJD.zip в ту же папку.
 
 
