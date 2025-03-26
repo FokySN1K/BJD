@@ -51,7 +51,7 @@ def getFileUrl(path: str) -> str:
 def start():
     # Если хотите добавить к новые данные, то просто сгенерьте новый файл json
     # и добавьте результат к старому (не забудьте заменить директорию поиска)
-    jsonFileDumpPath = "example.json"
+    jsonFileDumpPath = "BJD_1.json"
     jsonFile = Path(jsonFileDumpPath)
     directoryPath = "./BJD"
 
