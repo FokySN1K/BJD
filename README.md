@@ -23,3 +23,7 @@
 
 ```bash
 pip install easyocr
+
+3.
+
+
