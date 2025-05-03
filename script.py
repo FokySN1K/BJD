@@ -51,9 +51,9 @@ def getFileUrl(path: str) -> str:
 def start():
     # Если хотите добавить к новые данные, то просто сгенерьте новый файл json
     # и добавьте результат к старому (не забудьте заменить директорию поиска)
-    jsonFileDumpPath = "BJD_1.json"
+    jsonFileDumpPath = "BJD_3.json"
     jsonFile = Path(jsonFileDumpPath)
-    directoryPath = "./BJD"
+    directoryPath = "./BJD_3"
 
     data = []
 
@@ -87,8 +87,8 @@ def start():
                 #webbrowser.open(res['filepath'])
 
 def rename():
-    directory = "./21"
-    index = 54
+    directory = "./BJD_2"
+    index = 1
 
     for filename in os.listdir(directory):
         if os.path.isfile(os.path.join(directory, filename)):
